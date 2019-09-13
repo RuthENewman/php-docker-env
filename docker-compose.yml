@@ -6,7 +6,7 @@ services:
       context: ./Docker/php
     volumes:
       - /Users/ruthnewman/documents/php-docker-app/www:/var/www/app/public/
-    working_dir: /var/www/app
+    working_dir: /
   apache:
     build:
       context: ./Docker/apache
