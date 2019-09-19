@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  php:
+    build:
+      context: ./php
+    volumes:
+      - /Users/ruthnewman/documents/new-docker-app/www:/var/www/app/public/
+    working_dir: /var/www/app
+  apache:
+    build:
+      context: ./apache
+    volumes:
+      - /Users/ruthnewman/documents/new-docker-app/www:/var/www/app/public/
+    ports:
+      - 8181:80
+    links:
+      - php
